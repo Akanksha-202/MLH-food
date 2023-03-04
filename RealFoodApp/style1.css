@@ -3,9 +3,9 @@
 font-family: 'Poppins', sans-serif; */
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-rendering: optimizeLegibility !important;
-    background: #f3f3f5;
+    background: #060610;
 }
 
 .body-fixed {
@@ -98,7 +98,7 @@ ul {
     position: relative;
     justify-content: center;
     align-items: center;
-    color: #0d0d25;
+    color: #ffffff;
     text-transform: capitalize;
     font-weight: 500;
     padding: 5px 18px;
