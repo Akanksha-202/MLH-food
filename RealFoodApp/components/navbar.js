@@ -7,8 +7,8 @@ const navbar = () => {
         <li><a href="wallet.html">Wallet</a></li>
         <li><a href="like.html">Favorite</a></li>
         <li><a href="cart.html">Cart</a><sup></sup></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="signup.html">SignUp</a></li>
+        
+        <li><a href="signup.html">SignOut</a></li>
     </ul>
 </div>`
 
