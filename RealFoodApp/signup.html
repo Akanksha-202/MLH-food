@@ -7,88 +7,48 @@
     <title>Food App-Like</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="signup.css">
 </head>
-<style>
 
-     a{
-        color: black;
-    }
-    a:hover{
-        color: orangered;
-    }
-</style>
 <body>
-        <div id="header" ></div>
 
-        <div class="overlay">
-            <!-- LOGN IN FORM by Omar Dsoky -->
-            <form>
-               <!--   con = Container  for items in the form-->
-               <div class="con">
-               <!--     Start  header Content  -->
-               <header class="head-form">
-                  <h2>Sign up</h2>
-                  <!--     A welcome message or an explanation of the login form -->
-                  <p>Sign Up here using your username and password</p>
-               </header>
-               <!--     End  header Content  -->
-               <br>
-               <div class="field-set">
-                 
-                  <!--   user name -->
-                     <span class="input-item">
-                       <i class="fa fa-user-circle"></i>
-                     </span>
-                    <!--   user name Input-->
-                     <input class="form-input" id="txt-input" type="text" placeholder="@UserName" required>
-                 
-                  <br>
-                 
-                       <!--   Password -->
-                 
-                  <span class="input-item">
-                    <i class="fa fa-key"></i>
-                   </span>
-                  <!--   Password Input-->
-                  <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" required>
-                 
-            <!--      Show/hide password  -->
-                 <span>
-                    <i class="fa fa-eye" aria-hidden="true"  type="button" id="eye"></i>
-                 </span>
-                 
-                 
-                  <br>
-            <!--        buttons -->
-            <!--      button LogIn -->
-                  <button class="log-in" id="signbtn"> Sign up </button>
-               </div>
-              
-            <!--   other buttons -->
-               <div class="other">
-            <!--      Forgot Password button-->
-                  <button class="btn submits frgt-pass">Forgot Password</button>
-            <!--     Sign Up button -->
-                  <button class="btn submits sign-up"> <a href="./login.html">log in </a> 
-            <!--         Sign Up font icon -->
-                  <i class="fa fa-user-plus" aria-hidden="true"></i>
-                  </button>
-            <!--      End Other the Division -->
-               </div>
-                 
-            <!--   End Conrainer  -->
-              </div>
-              
-              <!-- End Form -->
-            </form>
+    <a href="index.html" class="back"><i class="fa-solid fa-angles-left"></i></a>
+
+    <div class="form-structor">
+        <div class="signup" id="sign-up">
+            <h2 class="form-post" id="psignup" style="color: aliceblue;">HEY THERE!</h2>
+            <div id="test">
+                <h2 class="form-title" id="signup"><span>New Here?</span>Sign up</h2>
+                <div class="form-holder">
+                    <input type="text" class="input" name="name" id="name" placeholder="Name" />
+                    <input type="email" class="input" name="email" id="email" placeholder="Email" />
+                    <input type="password" class="input" name="password" id="password" placeholder="Password" />
+                </div>
+                <button class="submit-btn" id="register">Sign up</button>
             </div>
-  
+        </div>
+        <div class="login slide-up">
+            <div class="center">
+                <h2 class="form-title" id="login"><span>Already Have Account?</span>Log in</h2>
+                <div class="form-holder">
+                    <input type="email" class="input" id="login_email" placeholder="Email" />
+                    <input type="password" class="input" id="login_password" placeholder="Password" />
+                </div>
+                <button class="submit-btn" id="logged">Log in</button>
+                <button class="submit-btn" id="logout" style="display: none;">Log Out</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="signup.js"></script>
+
+    <script type="module" src="auth.js"></script>
 </body>
 </html>
-<script type="module">
+<!-- <script type="module">
 
 import navbar from './components/navbar.js';
 let header = document.getElementById('header');
@@ -145,5 +105,5 @@ document.getElementById('signbtn').addEventListener('click', function(e){
 
 })
 
-</script>
+</script> -->
 
