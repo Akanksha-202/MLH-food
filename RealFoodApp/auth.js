@@ -65,7 +65,9 @@
           alert(user.email+" Logged In!!!");
           document.getElementById("logged").style.display="none";
           document.getElementById('logout').style.display ='block';
+          
           // ...
+          window.location.href = "userdash.html";
         })
         .catch((error) => {
           const errorCode = error.code;
