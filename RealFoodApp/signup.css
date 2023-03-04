@@ -98,7 +98,7 @@
     color: rgba(0, 0, 0, 0.4);
 }
  .form-structor .signup .submit-btn {
-    background-color: #d73851;
+    background-color: orangered;
     color: rgba(255, 255, 255, 0.7);
     border: 0;
     border-radius: 15px;
@@ -189,7 +189,7 @@
     color: rgba(0, 0, 0, 0.4);
 }
  .form-structor .login .center .submit-btn {
-    background-color: #d73851;
+    background-color: orangered;
     color: rgba(255, 255, 255, 0.7);
     border: 0;
     border-radius: 15px;
@@ -243,7 +243,7 @@
     left: -500px;
     margin: 5px;
     font-size: 30px;
-    color: #d73851;
+    color: orangered;
 }
 
 /* added by ridhi for signup */
