@@ -5,7 +5,7 @@ font-family: 'Poppins', sans-serif; */
 body {
     font-family: 'Montserrat', sans-serif;
     text-rendering: optimizeLegibility !important;
-    background: #060610;
+    background: #000000;
 }
 
 .body-fixed {
@@ -538,7 +538,7 @@ ul {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #0d0d25;
+    color: #ffffff;
     font-family: 'Playfair Display', serif;
     font-weight: 900;
 }
