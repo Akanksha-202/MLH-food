@@ -10,8 +10,8 @@ let getData = async () => {
     let searchInputTxt = document.querySelector('#search').value;
     try {
        
-        let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`);
-        // let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${searchInputTxt}`);
+        // let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`);
+        let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=European`);
         let data = await response.json();
         // console.log(data.meals);
         append(data.meals);
@@ -22,19 +22,19 @@ let getData = async () => {
     }
 }
 
-let getData2 = async () => {
+// let getData2 = async () => {
   
-    try {
-        let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=indian`);
-        let data = await response.json();
-        // console.log(data.meals);
-        append(data.meals);
+//     try {
+//         let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=European`);
+//         let data = await response.json();
+//         // console.log(data.meals);
+//         append(data.meals);
 
-    } catch (error) {
-        console.log(error);
-    }
-}
-getData2()
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+// getData2()
 
 
 // strMeal
@@ -62,7 +62,7 @@ const append =(data)=>{
         let div2 = document.createElement('div');
         div2.classList.add('text')
         let p = document.createElement('h3');
-        p.innerHTML = el.strMeal;
+        p.innerHTML = 'European ${el.strMeal}';
 
         let p2 = document.createElement('p');
         p2.innerHTML =`<i class="fa-solid fa-heart"></i>`
