@@ -3,7 +3,7 @@
 font-family: 'Poppins', sans-serif; */
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Courier New", Courier, monospace;
     text-rendering: optimizeLegibility !important;
     background: #000000;
 }
@@ -23,7 +23,24 @@ body, html {
 img {
     max-width: 100%;
 }
-
+.typewriter {
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 48px;
+    animation: typing 3s steps(30, end) forwards;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+      
 .site-header {
     position: fixed;
     padding: 30px 0;
@@ -520,15 +537,20 @@ ul {
 }
 
 .h1-title {
-    font-size: 90px;
+    font-size: 60px;
     line-height: 108px;
     text-transform: capitalize;
     margin-bottom: 25px;
     font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
 }
-
-.h1-title span {
+.h1-title div{
     color: #ff8243;
+    font-size: 60px;
+}
+.h1-title-titlename {
+    color: #ffffff;
+    font-size: 100px;
     background-image: linear-gradient(0deg, rgb(13 13 37 /8%), rgb(13 13 37 /8%));
     background-size: 100% 15px;
     background-position: 0 90%;
