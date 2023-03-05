@@ -31,7 +31,7 @@ export const FoodData = [
           "rating": 4.3
         },
         "Red Planet Antipasto": {
-          "img": "Red_Planet_Antipasto,jpg",
+          "img": "Red_Planet_Antipasto.jpg",
           "price": 8.99,
           "name": "Red Planet Antipasto",
           "rating": 4.6
@@ -43,7 +43,7 @@ export const FoodData = [
           "rating": 4.1
         },
         "Arlorxian Daxoblade": {
-          "img": "Arlorxian_Daxoblade",
+          "img": "Arlorxian_Daxoblade.jpg",
           "price": 13.99,
           "name": "Arlorxian Daxoblade",
           "rating": 4.4
