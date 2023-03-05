@@ -2,7 +2,7 @@
 /* End Fonts */
 /* Start Global rules */
 * {
-    padding: 0;
+    padding: 80px;
     margin: 0;
     box-sizing: border-box;
 }
@@ -17,7 +17,7 @@ background-attachment: fixed;
 
     font-family: 'Vibur', cursive;
 /*   the main font */
-    font-family: 'Abel', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 opacity: .95;
 /* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
 }
@@ -65,7 +65,7 @@ header {
 /* Login title form form */
 header h2 {
     font-size: 250%;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', serif;
     color: #3e403f;
 }
 /*  A welcome message or an explanation of the login form */
@@ -113,7 +113,7 @@ input[class="form-input"]{
     padding: 15px;
     
     font-size: 16px;
-    font-family: 'Abel', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #5E6472;
   
     outline: none;
