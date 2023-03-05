@@ -39,6 +39,10 @@ After successfully integrating Firebase with the project, you can run the projec
 Note that in order to fully test Firebase functionality, you may need to deploy the project to a live server or emulator.
 
 
+![alt image1](https://github.com/Akanksha-202/MLH-food/blob/main/eaf0a24f-b820-480e-b655-cd02b71ec695.jpg)
+![alt image2](https://github.com/Akanksha-202/MLH-food/blob/main/ac85245c-de43-498f-9193-ca3e9ec36b64.jpg)
+![alt image3](https://github.com/Akanksha-202/MLH-food/blob/main/881484a2-8261-443b-a164-12d874c74f09.jpg)
+
 
 
 
