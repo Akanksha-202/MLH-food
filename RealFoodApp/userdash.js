@@ -1,137 +1,136 @@
-
-document.querySelector('#searchBtn').addEventListener('click', function(e) {
-    e.preventDefault();
-
-    getData();
-
-});
-
-let getData = async () => {
-    let searchInputTxt = document.querySelector('#search').value;
-    try {
-       
-        let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`);
-        // let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${searchInputTxt}`);
-        let data = await response.json();
-        // console.log(data.meals);
-        append(data.meals);
-
-    } catch (error) {
-        console.log(error);
-        alert('No Data Found');
+const FoodData = [
+    {
+        "Quisar Quiche": {
+          "img": "Quisar_Quiche.jpg",
+          "price": 9.99,
+          "name": "Quisar Quiche",
+          "rating": 4.5
+        },
+        "Intergalactic Goulash": {
+          "img": "Intergalactic_Goulash.jpg",
+          "price": 8.99,
+          "name": "Intergalactic Goulash",
+          "rating": 4.4
+        }
+        ,
+        "Cosmic Cavier": {
+          "img": "Cosmic_Cavier.jpg",
+          "price": 15.99,
+          "name": "Cosmic Cavier",
+          "rating": 4.7
+        },
+        "Interstellar S'mores": {
+          "img": "Interstellar_S'mores.jpg",
+          "price": 7.99,
+          "name": "Interstellar S'mores",
+          "rating": 4.0
+        },
+        "Gorgomaxian Meklent": {
+          "img": "Gorgomaxian_Meklent.jpg",
+          "price": 11.99,
+          "name": "Gorgomaxian Meklent",
+          "rating": 4.3
+        },
+        "Red Planet Antipasto": {
+            "img": "8.jpg",
+            "price": 8.99,
+            "name": "Red Planet Antipasto",
+            "rating": 4.6
+          },
+        "Thaloxian Kralix": {
+          "img": "Thaloxian_Kralix.jpg",
+          "price": 10.99,
+          "name": "Thaloxian Kralix",
+          "rating": 4.1
+        },
+        "Arlorxian Daxoblade": {
+            "img": "5.jpg",
+            "price": 13.99,
+            "name": "Arlorxian Daxoblade",
+            "rating": 4.4
+          },
+        "Cosmic Crab Cakes": {
+          "img": "Cosmic_Crab_Cakes.jpg",
+          "price": 10.99,
+          "name": "Cosmic Crab Cakes",
+          "rating": 4.6
+        },
+        "Martian Mountain Stew": {
+            "img": "Martian_Mountain_Stew.jpg",
+            "price": 12.99,
+            "name": "Martian Mountain Stew",
+            "rating": 4.2
+          }
     }
-}
-
-let getData2 = async () => {
+  ];
   
-    try {
-        let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=indian`);
-        let data = await response.json();
-        // console.log(data.meals);
-        append(data.meals);
-
-    } catch (error) {
-        console.log(error);
-    }
-}
-getData2()
-
-
-// strMeal
-// strMealThumb
-
-let foodArr = JSON.parse(localStorage.getItem('food')) || [];
-
-let likeArr = JSON.parse(localStorage.getItem('like')) || [];
-const append =(data)=>{
-   let sup =  document.querySelector('sup');
-   sup.innerHTML = foodArr.length;
+  let foodArr = [];
   
-    let notif = document.querySelector('.notification');
-    let notifd = document.querySelector('.notifDiv');
-    document.getElementById('show').innerHTML = '';
-    let price  = Math.floor(Math.random() * 500); 
-
-    data.forEach(el => {
-        
-        let div = document.createElement('div');
-
-        let img = document.createElement('img');
-        img.src = el.strMealThumb;
-        
-        let div2 = document.createElement('div');
-        div2.classList.add('text')
-        let p = document.createElement('h3');
-        p.innerHTML = el.strMeal;
-
-        let p2 = document.createElement('p');
-        p2.innerHTML =`<i class="fa-solid fa-heart"></i>`
-        p2.classList.add('heart')
-        p2.addEventListener('click', function(e) {
-           let timer = setInterval(() => {
-
-            notif.innerHTML =el.strMeal+ ' 👍';
-            notifd.style.display = 'block';
-
-            }, 10);
-            setTimeout(() => {
-                notifd.style.display = 'none';
-                clearInterval(timer);
-            }, 2000);
-           
-            p2.style.color = 'oranged';
-            let foodObj = {
-                name: el.strMeal,
-                price: parseInt(price.innerHTML),
-                img: el.strMealThumb
-
-            }
-            likeArr.push(foodObj);
-            localStorage.setItem('like', JSON.stringify(likeArr));
-           
-            
-        });
-
-        div2.append(p,p2);
-
-        let div3 = document.createElement('div');
-        div3.classList.add('price');
-        let price  = document.createElement('p');
-        // <i class="fa-solid fa-rupee-sign"></i>. 
-        price.innerHTML = `${Math.floor(Math.random() * 500)}`;
-
-        let cart = document.createElement('button');
-        // cart.classList.add('cssbuttons-io-button');
-        cart.innerHTML = `Add to Cart`;
-        cart.addEventListener('click', function(e) {
-            let timer = setInterval(() => {
-
-                notif.innerHTML =el.strMeal+ ' <b>Added to Cart</b>';
-                notifd.style.display = 'block';
-    
-                }, 300);
-                setTimeout(() => {
-                    notifd.style.display = 'none';
-                    clearInterval(timer);
-                }, 2000);
-            let foodObj = {
-                name: el.strMeal,
-                price: parseInt(price.innerHTML),
-                img: el.strMealThumb
-
-            }
-           foodArr.push(foodObj);
-            localStorage.setItem('food', JSON.stringify(foodArr));
-            
-        });
-
-        div3.append(price,cart);
-
-        div.append(img,div2,div3);
-        document.getElementById('show').append(div);
-
-
+  function createCard(el) {
+    // Create elements for card
+    let div = document.createElement('div');
+    let img = document.createElement('img');
+    let div2 = document.createElement('div');
+    let h4 = document.createElement('h4');
+    let p = document.createElement('p');
+    let div3 = document.createElement('div');
+    let price = document.createElement('span');
+    let cart = document.createElement('button');
+  
+    // Set attributes and content for elements
+    div.classList.add('card');
+    img.src = el.img;
+    img.alt = el.name;
+    h4.innerText = el.name;
+    p.innerText = `Rating: ${el.rating}/10`;
+    price.innerText = el.price ? `$${el.price.toFixed(2)}` : '';
+    cart.innerHTML = `Add to Cart`;
+  
+    // Add event listener to "Add to Cart" button
+    cart.addEventListener('click', function(e) {
+      addToCart(el);
     });
-}
-
-// -------------------- other section 
+  
+    // Append elements to card
+    div2.append(h4, p);
+    div3.append(price, cart);
+    div.append(img, div2, div3);
+    return div;
+  }
+  
+  function addToCart(item) {
+    // Create food object and push to foodArr
+    let foodObj = {
+      name: item.name,
+      price: item.price,
+      img: item.img
+    };
+    foodArr.push(foodObj);
+    localStorage.setItem('food', JSON.stringify(foodArr));
+    updateCartNotification(item);
+  }
+  
+  function updateCartNotification(item) {
+    let notifd = document.getElementById('notif');
+    let timer = setInterval(() => {
+      notifd.innerHTML = `${item.name} <b>added to cart</b>`;
+      notifd.style.display = 'block';
+    }, 300);
+  
+    setTimeout(() => {
+      notifd.style.display = 'none';
+      clearInterval(timer);
+    }, 2000);
+  }
+  
+  function displayCards() {
+    const showElement = document.getElementById('show');
+    
+    Object.values(FoodData[0]).forEach((item) => {
+      const card = createCard(item); // Create the card element
+      showElement.appendChild(card); // Append the card to the container element
+    });
+  }
+  
+  displayCards();
+  
