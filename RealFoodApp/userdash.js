@@ -64,7 +64,14 @@ const FoodData = [
     }
   ];
   
-  let foodArr = [];
+  
+  // Extract the food items and ratings into an array
+  let foodArr = Object.values(FoodData[0]);
+
+  // Sort the food items based on rating in descending order
+  foodArr= foodArr.sort((a, b) => b.rating - a.rating);
+  
+  
   
   function createCard(el) {
     // Create elements for card
@@ -126,7 +133,7 @@ const FoodData = [
   function displayCards() {
     const showElement = document.getElementById('show');
     
-    Object.values(FoodData[0]).forEach((item) => {
+    foodArr.forEach((item) => {
       const card = createCard(item); // Create the card element
       showElement.appendChild(card); // Append the card to the container element
     });
